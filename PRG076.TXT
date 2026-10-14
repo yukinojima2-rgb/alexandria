@@ -1,0 +1,27 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.076(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Service Drawers Place Complete"]        FN99;Comment
+   2    IF I0268=1 AND I1048=1                       FN676;IF Condition
+   3    CALLP[120]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 1
+   4    ELSEIF I0269=1 AND I1049=1                   FN677;ELSEIF Condition
+   5    CALLP[121]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 2
+   6    ELSEIF I0270=1 AND I1050=1                   FN677;ELSEIF Condition
+   7    CALLP[122]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 3
+   8    ELSEIF I0271=1 AND I1051=1                   FN677;ELSEIF Condition
+   9    CALLP[123]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 4
+  10    ELSEIF I0272=1 AND I1052=1                   FN677;ELSEIF Condition
+  11    CALLP[124]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 5
+  12    ENDIF                                        FN679;Condition end
+  13    REM["Close After Last Pick Is Placed"]       FN99;Comment
+  14    IF O0100=1                                   FN676;IF Condition
+  15    CALLP[71]                                    FN80;Program call
+                  Program Name:Service Drawers Close
+  16    ENDIF                                        FN679;Condition end
+  17    END                                          FN92;End
+Program List End

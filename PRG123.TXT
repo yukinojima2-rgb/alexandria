@@ -1,0 +1,35 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.123(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Place Cab 1 Drawer 4"]                  FN99;Comment
+   2   50.0%      JOINT   A6   T1                        V
+                  'At front of drawer
+   3    REM["Approach"]                              FN99;Comment
+   4   25.0%      JOINT   A1   T1                        V
+                  'Approach drawer
+   5    300mm/s   LIN     A1   T1     S1                 V
+                  'Transition
+   6   75.0mm/s   LIN     A1   T1     S1                 V
+                  'Transition low
+   7    DELAY[1]                                     FN50;Timer delay
+   8    300mm/s   LIN     A1   T1     S1                 V
+                  'Transition clear
+   9    500mm/s   LIN     A1   T1                        V
+                  'Center of drawer
+  10    PALLET3[9,0,O0,O0]                           FN249;Palletize start
+  11    750mm/s   LIN     A1   T1                        V
+                  'Above
+  12    150mm/s   LIN     A1   T1                        V
+                  'Place
+  13    DELAY[0.25]                                  FN50;Timer delay
+  14    CALLP[30]                                    FN80;Program call
+                  Program Name:Gripper2 Open
+  15    750mm/s   LIN     A3   T1                        V
+                  'Clear
+  16    PALLET3_END[9,O120]                          FN250;Palletize end
+  17    750mm/s   LIN     A4   T1  D3 S3                 V
+                  'Center of drawer
+  18    500mm/s   LIN     A1   T1     S1                 V
+                  'Clear drawer
+  19    END                                          FN92;End
+Program List End

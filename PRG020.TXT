@@ -1,0 +1,24 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.020(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Gripper 1 open"]                        FN99;Comment
+   2    REM["----------------------------------"]    FN99;Comment
+   3    *[Top]                                       FN601;Label
+   4    SETMD[O129,0,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Close G1
+   5    DELAY[0.25]                                  FN50;Timer delay
+   6    SETMD[O128,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Open G1
+   7    WAITI[I128]                                  FN525;Wait Input cond
+                  Signal Name :G1 is open
+   8    DELAY[0.25]                                  FN50;Timer delay
+   9    END                                          FN92;End
+  10    REM[""]                                      FN99;Comment
+  11    REM["Alarm, gripper1 failed to open"]        FN99;Comment
+  12    REM["----------------------------------"]    FN99;Comment
+  13    SETMD[O52,1,0,1]                             FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Alarm2
+  14    DELAY[0.5]                                   FN50;Timer delay
+  15    GOTO[1]                                      FN90;Line jump
+  16    END                                          FN92;End
+Program List End

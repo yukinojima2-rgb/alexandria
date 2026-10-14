@@ -1,0 +1,18 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.201(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Left MC Enter"]                         FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3    REM["Wait for machine ready"]                FN99;Comment
+   4    WAITI[I1002]                                 FN525;Wait Input cond
+                  Signal Name :MC1 ready for service
+   5    SETM[O1002,1]                                FN105;Output signal
+                  Signal Name :MC1 robot in MC
+   6   25.0%      JOINT   A5   T1  D2 S2                 V
+                  'At Machine
+   7    REM[""]                                      FN99;Comment
+   8    REM["----------------------------------"]    FN99;Comment
+   9    300mm/s   LIN     A6   T1  D2 S2                 V
+                  'Enter machine
+  10    END                                          FN92;End
+Program List End

@@ -1,0 +1,15 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.031(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Gripper 2 Close"]                       FN99;Comment
+   2    REM["----------------------------------"]    FN99;Comment
+   3    SETMD[O130,0,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Open G2
+   4    DELAY[0.25]                                  FN50;Timer delay
+   5    SETMD[O131,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Close G2
+   6    WAITJ[I130]                                  FN526;Wait not Input cond
+                  Signal Name :G2 is open
+   7    DELAY[0.5]                                   FN50;Timer delay
+   8    END                                          FN92;End
+Program List End

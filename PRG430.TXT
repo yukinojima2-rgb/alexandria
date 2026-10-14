@@ -1,0 +1,61 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.430(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Left MC Load OP20 Part3"]               FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3    300mm/s   LIN     A1   T1     S1                 V
+   4   25.0%      JOINT   A4   T1                        V
+                  'Approach
+   5    REM[".......!"]                              FN99;Comment
+   6    300mm/s   LIN     A1 P T1                        V
+   7    300mm/s   LIN     A1 P T1                        V
+   8   50.0mm/s   LIN     A1 P T1                        V
+   9    DELAY[1]                                     FN50;Timer delay
+  10    100mm/s   LIN     A1   T1     S1                 V
+  11    REM[".......!"]                              FN99;Comment
+  12    300mm/s   LIN     A1   T1     S1                 V
+  13    100mm/s   LIN     A1 P T1                        V
+  14   25.0mm/s   LIN     A1 P T1                        V
+  15   25.0mm/s   LIN     A1 P T1                        V
+  16   25.0mm/s   LIN     A1 P T1                        V
+  17    SETM[O129,0]                                 FN105;Output signal
+                  Signal Name :Close G1
+  18    DELAY[0.25]                                  FN50;Timer delay
+  19    SETM[O128,0]                                 FN105;Output signal
+                  Signal Name :Open G1
+  20    DELAY[0.25]                                  FN50;Timer delay
+  21    SETMD[O128,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Open G1
+  22    DELAY[0.5]                                   FN50;Timer delay
+  23   50.0mm/s   LIN     A1   T1                        V
+  24   10.0%      JOINT   A1   T1     S1                 V
+  25    SETM[O1016,0]                                FN105;Output signal
+                  Signal Name :Pusher In
+  26    SETM[O1006,1]                                FN105;Output signal
+                  Signal Name :Pusher Out
+  27    DELAY[2]                                     FN50;Timer delay
+  28    100mm/s   LIN     A1 P T1  D3                    V
+  29    DELAY[1]                                     FN50;Timer delay
+  30    250mm/s   LIN     A1   T1     S1                 V
+  31    150mm/s   LIN     A1   T1     S1                 V
+  32   50.0mm/s   LIN     A1 P T1     S1                 V
+  33    DELAY[1]                                     FN50;Timer delay
+  34    SETM[O1011,0]                                FN105;Output signal
+                  Signal Name :MC1 unclamp OP20
+  35    DELAY[0.25]                                  FN50;Timer delay
+  36    DELAY[2]                                     FN50;Timer delay
+  37    SETMD[O1010,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :MC1 clamp OP20
+  38    SETM[O1016,1]                                FN105;Output signal
+                  Signal Name :Pusher In
+  39    DELAY[0.25]                                  FN50;Timer delay
+  40    SETM[O1006,0]                                FN105;Output signal
+                  Signal Name :Pusher Out
+  41    WAITI[I1003]                                 FN525;Wait Input cond
+                  Signal Name :MC1 OP20 Clamp
+  42    DELAY[0.25]                                  FN50;Timer delay
+  43    100mm/s   LIN     A1 P T1  D3 S3                 V
+                  'DROP
+  44    REM["---------------------------------"]     FN99;Comment
+  45    END                                          FN92;End
+Program List End

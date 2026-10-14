@@ -1,0 +1,43 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.070(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Service Drawers Open"]                  FN99;Comment
+   2    IF I0109=1 THEN 3 ELSE 27                    FN602;Condition
+   3    WAITJ[I108]                                  FN526;Wait not Input cond
+                  Signal Name :No drawers in process
+   4    REM[""]                                      FN99;Comment
+   5    SETM[O1020,1]                                FN105;Output signal
+                  Signal Name :Lock cabinet door
+   6    WAITI[I1065]                                 FN525;Wait Input cond
+                  Signal Name :Cabinet is locked
+   7    SETM[O1024,0]                                FN105;Output signal
+                  Signal Name :lock Drawers
+   8    SETM[O1025,1]                                FN105;Output signal
+                  Signal Name :UNLock Drawers
+   9    WAITI[I1030]                                 FN525;Wait Input cond
+                  Signal Name :Drawer lock is up
+  10    REM[""]                                      FN99;Comment
+  11    IF I1056=1 AND I0268=1 THEN 12 ELSE 14       FN602;Condition
+  12    CALLP[65]                                    FN80;Program call
+                  Program Name:Open Cab 1 Drawer 1
+  13    GOTO[26]                                     FN90;Line jump
+  14    IF I1057=1 AND I0269=1 THEN 15 ELSE 17       FN602;Condition
+  15    CALLP[66]                                    FN80;Program call
+                  Program Name:Open Cab 1 Drawer 2
+  16    GOTO[26]                                     FN90;Line jump
+  17    IF I1058=1 AND I0270=1 THEN 18 ELSE 20       FN602;Condition
+  18    CALLP[67]                                    FN80;Program call
+                  Program Name:Open Cab 1 Drawer 3
+  19    GOTO[26]                                     FN90;Line jump
+  20    IF I1059=1 AND I0271=1 THEN 21 ELSE 23       FN602;Condition
+  21    CALLP[68]                                    FN80;Program call
+                  Program Name:Open Cab 1 Drawer 4
+  22    GOTO[26]                                     FN90;Line jump
+  23    IF I1060=1 AND I0272=1 THEN 24 ELSE 27       FN602;Condition
+  24    CALLP[69]                                    FN80;Program call
+                  Program Name:Open Cab 1 Drawer 5
+  25    GOTO[26]                                     FN90;Line jump
+  26    CALLP[3]                                     FN80;Program call
+                  Program Name:Home 
+  27    END                                          FN92;End
+Program List End

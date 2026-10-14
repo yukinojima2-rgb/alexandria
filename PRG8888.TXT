@@ -1,0 +1,193 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.8888(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["DEBURR"]                                FN99;Comment
+   2   20.0%      JOINT   A4   T1     S3                 V
+   3    200mm/s   LIN     A4   T1     S3                 V
+   4   25.0mm/s   LIN     A1   T1                        V
+   5    DELAY[0.5]                                   FN50;Timer delay
+   6   25.0mm/s   LIN     A4   T1     S3                 V
+   7    200mm/s   LIN     A2   T1                        V
+   8    200mm/s   LIN     A2   T1                        V
+   9    DELAY[0.1]                                   FN50;Timer delay
+  10    100mm/s   LIN     A4   T1                        V
+  11   25.0mm/s   LIN     A4   T1                        V
+  12    LETVI[V1%,0]                                 FN75;Set integer variable
+  13    100mm/s   LIN     A4   T1                        V
+  14    100mm/s   LIN     A4   T1                        V
+  15    ADDVI[V1%,1]                                 FN637;Add integer variable
+  16    IF V1%<4 THEN 13 ELSE 17                     FN602;Condition
+  17    150mm/s   LIN     A4   T1                        V
+  18   50.0mm/s   LIN     A4   T1                        V
+  19    DELAY[0.1]                                   FN50;Timer delay
+  20    100mm/s   LIN     A4   T1                        V
+  21   25.0mm/s   LIN     A4   T1                        V
+  22    LETVI[V1%,0]                                 FN75;Set integer variable
+  23    100mm/s   LIN     A4   T1                        V
+  24    100mm/s   LIN     A4   T1                        V
+  25    ADDVI[V1%,1]                                 FN637;Add integer variable
+  26    IF V1%<4 THEN 23 ELSE 27                     FN602;Condition
+  27   50.0mm/s   LIN     A4   T1                        V
+  28    LETVI[V1%,0]                                 FN75;Set integer variable
+  29    100mm/s   LIN     A4   T1                        V
+  30    100mm/s   LIN     A4   T1                        V
+  31    ADDVI[V1%,1]                                 FN637;Add integer variable
+  32    IF V1%<4 THEN 29 ELSE 33                     FN602;Condition
+  33    100mm/s   LIN     A4   T1                        V
+  34    100mm/s   LIN     A4   T1                        V
+  35    DELAY[0.1]                                   FN50;Timer delay
+  36    100mm/s   LIN     A4   T1                        V
+  37   50.0mm/s   LIN     A4   T1                        V
+  38    LETVI[V1%,0]                                 FN75;Set integer variable
+  39    100mm/s   LIN     A4   T1                        V
+  40    100mm/s   LIN     A4   T1                        V
+  41    ADDVI[V1%,1]                                 FN637;Add integer variable
+  42    IF V1%<4 THEN 39 ELSE 43                     FN602;Condition
+  43   25.0mm/s   LIN     A4   T1                        V
+  44    LETVI[V1%,0]                                 FN75;Set integer variable
+  45    100mm/s   LIN     A4   T1                        V
+  46    100mm/s   LIN     A4   T1                        V
+  47    ADDVI[V1%,1]                                 FN637;Add integer variable
+  48    IF V1%<4 THEN 45 ELSE 49                     FN602;Condition
+  49    100mm/s   LIN     A4   T1                        V
+  50   50.0mm/s   LIN     A4   T1                        V
+  51    DELAY[0.1]                                   FN50;Timer delay
+  52   50.0mm/s   LIN     A4   T1                        V
+  53   50.0mm/s   LIN     A4   T1                        V
+  54    LETVI[V1%,0]                                 FN75;Set integer variable
+  55    100mm/s   LIN     A4   T1                        V
+  56    100mm/s   LIN     A4   T1                        V
+  57    ADDVI[V1%,1]                                 FN637;Add integer variable
+  58    IF V1%<4 THEN 55 ELSE 59                     FN602;Condition
+  59   25.0mm/s   LIN     A4   T1                        V
+  60    LETVI[V1%,0]                                 FN75;Set integer variable
+  61    100mm/s   LIN     A4   T1                        V
+  62    100mm/s   LIN     A4   T1                        V
+  63    ADDVI[V1%,1]                                 FN637;Add integer variable
+  64    IF V1%<4 THEN 61 ELSE 65                     FN602;Condition
+  65    100mm/s   LIN     A4   T1                        V
+  66   50.0mm/s   LIN     A4   T1                        V
+  67    DELAY[0.1]                                   FN50;Timer delay
+  68   50.0mm/s   LIN     A4   T1                        V
+  69   50.0mm/s   LIN     A4   T1                        V
+  70    LETVI[V1%,0]                                 FN75;Set integer variable
+  71    100mm/s   LIN     A4   T1                        V
+  72    100mm/s   LIN     A4   T1                        V
+  73    ADDVI[V1%,1]                                 FN637;Add integer variable
+  74    IF V1%<4 THEN 71 ELSE 75                     FN602;Condition
+  75   25.0mm/s   LIN     A4   T1                        V
+  76    LETVI[V1%,0]                                 FN75;Set integer variable
+  77    100mm/s   LIN     A4   T1                        V
+  78    100mm/s   LIN     A4   T1                        V
+  79    ADDVI[V1%,1]                                 FN637;Add integer variable
+  80    IF V1%<4 THEN 77 ELSE 81                     FN602;Condition
+  81    100mm/s   LIN     A4   T1                        V
+  82   50.0mm/s   LIN     A4   T1                        V
+  83    DELAY[0.1]                                   FN50;Timer delay
+  84   50.0mm/s   LIN     A4   T1                        V
+  85   50.0mm/s   LIN     A4   T1                        V
+  86    LETVI[V1%,0]                                 FN75;Set integer variable
+  87    100mm/s   LIN     A4   T1                        V
+  88    100mm/s   LIN     A4   T1                        V
+  89    ADDVI[V1%,1]                                 FN637;Add integer variable
+  90    IF V1%<4 THEN 87 ELSE 91                     FN602;Condition
+  91   25.0mm/s   LIN     A4   T1                        V
+  92    LETVI[V1%,0]                                 FN75;Set integer variable
+  93    100mm/s   LIN     A4   T1                        V
+  94    100mm/s   LIN     A4   T1                        V
+  95    ADDVI[V1%,1]                                 FN637;Add integer variable
+  96    IF V1%<4 THEN 93 ELSE 97                     FN602;Condition
+  97    100mm/s   LIN     A4   T1                        V
+  98   50.0mm/s   LIN     A4   T1                        V
+  99    DELAY[0.1]                                   FN50;Timer delay
+ 100   50.0mm/s   LIN     A4   T1                        V
+ 101   50.0mm/s   LIN     A4   T1                        V
+ 102    LETVI[V1%,0]                                 FN75;Set integer variable
+ 103    100mm/s   LIN     A4   T1                        V
+ 104    100mm/s   LIN     A4   T1                        V
+ 105    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 106    IF V1%<4 THEN 103 ELSE 107                   FN602;Condition
+ 107   25.0mm/s   LIN     A4   T1                        V
+ 108    LETVI[V1%,0]                                 FN75;Set integer variable
+ 109    100mm/s   LIN     A4   T1                        V
+ 110    100mm/s   LIN     A4   T1                        V
+ 111    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 112    IF V1%<4 THEN 109 ELSE 113                   FN602;Condition
+ 113    100mm/s   LIN     A4   T1                        V
+ 114   50.0mm/s   LIN     A4   T1                        V
+ 115    DELAY[0.1]                                   FN50;Timer delay
+ 116   50.0mm/s   LIN     A4   T1                        V
+ 117   50.0mm/s   LIN     A4   T1                        V
+ 118    LETVI[V1%,0]                                 FN75;Set integer variable
+ 119    100mm/s   LIN     A4   T1                        V
+ 120    100mm/s   LIN     A4   T1                        V
+ 121    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 122    IF V1%<4 THEN 119 ELSE 123                   FN602;Condition
+ 123   25.0mm/s   LIN     A4   T1                        V
+ 124    LETVI[V1%,0]                                 FN75;Set integer variable
+ 125    100mm/s   LIN     A4   T1                        V
+ 126    100mm/s   LIN     A4   T1                        V
+ 127    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 128    IF V1%<4 THEN 125 ELSE 129                   FN602;Condition
+ 129    100mm/s   LIN     A4   T1                        V
+ 130   50.0mm/s   LIN     A4   T1                        V
+ 131    DELAY[0.1]                                   FN50;Timer delay
+ 132   50.0mm/s   LIN     A4   T1                        V
+ 133   50.0mm/s   LIN     A4   T1                        V
+ 134    LETVI[V1%,0]                                 FN75;Set integer variable
+ 135    100mm/s   LIN     A4   T1                        V
+ 136    100mm/s   LIN     A4   T1                        V
+ 137    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 138    IF V1%<4 THEN 135 ELSE 139                   FN602;Condition
+ 139   25.0mm/s   LIN     A4   T1                        V
+ 140    LETVI[V1%,0]                                 FN75;Set integer variable
+ 141    100mm/s   LIN     A4   T1                        V
+ 142    100mm/s   LIN     A4   T1                        V
+ 143    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 144    IF V1%<4 THEN 141 ELSE 145                   FN602;Condition
+ 145    100mm/s   LIN     A4   T1                        V
+ 146   50.0mm/s   LIN     A4   T1                        V
+ 147    DELAY[0.1]                                   FN50;Timer delay
+ 148   50.0mm/s   LIN     A4   T1                        V
+ 149   50.0mm/s   LIN     A4   T1                        V
+ 150    LETVI[V1%,0]                                 FN75;Set integer variable
+ 151    100mm/s   LIN     A4   T1                        V
+ 152    100mm/s   LIN     A4   T1                        V
+ 153    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 154    IF V1%<4 THEN 151 ELSE 155                   FN602;Condition
+ 155   25.0mm/s   LIN     A4   T1                        V
+ 156    LETVI[V1%,0]                                 FN75;Set integer variable
+ 157    100mm/s   LIN     A4   T1                        V
+ 158    100mm/s   LIN     A4   T1                        V
+ 159    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 160    IF V1%<4 THEN 157 ELSE 161                   FN602;Condition
+ 161    100mm/s   LIN     A4   T1                        V
+ 162   50.0mm/s   LIN     A4   T1                        V
+ 163    DELAY[0.1]                                   FN50;Timer delay
+ 164   50.0mm/s   LIN     A4   T1                        V
+ 165   50.0mm/s   LIN     A4   T1                        V
+ 166    LETVI[V1%,0]                                 FN75;Set integer variable
+ 167    100mm/s   LIN     A4   T1                        V
+ 168    100mm/s   LIN     A4   T1                        V
+ 169    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 170    IF V1%<4 THEN 167 ELSE 171                   FN602;Condition
+ 171   25.0mm/s   LIN     A4   T1                        V
+ 172    LETVI[V1%,0]                                 FN75;Set integer variable
+ 173    100mm/s   LIN     A4   T1                        V
+ 174    100mm/s   LIN     A4   T1                        V
+ 175    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 176    IF V1%<4 THEN 173 ELSE 177                   FN602;Condition
+ 177    100mm/s   LIN     A4   T1                        V
+ 178   50.0mm/s   LIN     A4   T1                        V
+ 179    DELAY[0.1]                                   FN50;Timer delay
+ 180    100mm/s   LIN     A4   T1                        V
+ 181   50.0mm/s   LIN     A4   T1                        V
+ 182    LETVI[V1%,0]                                 FN75;Set integer variable
+ 183    100mm/s   LIN     A4   T1                        V
+ 184    100mm/s   LIN     A4   T1                        V
+ 185    ADDVI[V1%,1]                                 FN637;Add integer variable
+ 186    IF V1%<4 THEN 183 ELSE 187                   FN602;Condition
+ 187    250mm/s   LIN     A4   T1                        V
+ 188   30.0%      JOINT   A4   T1                        V
+ 189    END                                          FN92;End
+Program List End

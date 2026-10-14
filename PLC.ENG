@@ -1,0 +1,45 @@
+1,Grip1 part present
+2,Grip2 part present
+3,At home
+4,Blowoff
+5,Air Pressure OK
+6,Grip1 opened
+7,Grip1 closed
+8,Toggle gripper1
+9,Open grip1
+10,Close grip1
+11,Grip2 opened
+12,Grip2 closed
+13,Toggle grip2
+14,Open grip2
+15,Close grip2
+16,Prog select MAIN
+17,Prog select HOME
+18,Set active integer
+19,Check select MAIN
+20,Check select HOME
+21,Cycle start
+22,Strobe
+23,Hold
+24,Abort
+25,Motor On
+26,Alarm1
+27,Alarm2
+28,Alarm3
+29,Alarm4
+30,Alarm5
+31,Alarm6
+32,Alarm7
+33,Alarm8
+34,Alarm9
+35,Alarm10
+36,Bulkhead Program End
+37,Stacklight Red
+38,Stacklight Amber
+39,Stacklight Green
+40,Regrip part Present
+41,
+42,
+43,
+44,
+

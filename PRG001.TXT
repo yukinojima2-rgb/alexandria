@@ -1,0 +1,14 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.001(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Main program"]                          FN99;Comment
+   2    CALLP[2]                                     FN80;Program call
+                  Program Name:Initilize data
+   3    CALLP[9]                                     FN80;Program call
+                  Program Name:Main 2
+                  'INIT data
+   4    JMP[3]                                       FN20;Step jump
+   5    REM["---------------------------------"]     FN99;Comment
+   6    STOP                                         FN41;Robot stop
+   7    END                                          FN92;End
+Program List End

@@ -1,0 +1,36 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.220(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Left MC Blowoff Fixture"]               FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3   30.0%      JOINT   A2   T1                        V
+                  'At Machine
+   4    250mm/s   LIN     A1   T1  D1                    V
+   5    SETM[O134,1]                                 FN105;Output signal
+                  Signal Name :Blowoff
+   6    100mm/s   LIN     A1   T1  D1                    V
+                  'At Machine
+   7    100mm/s   LIN     A1   T1  D1                    V
+   8    100mm/s   LIN     A1   T1  D1                    V
+                  'At Machine
+   9    100mm/s   LIN     A1   T1  D1                    V
+  10    100mm/s   LIN     A1   T1  D1                    V
+  11   50.0mm/s   LIN     A2   T1                        V
+  12   50.0mm/s   LIN     A2   T1                        V
+  13   50.0mm/s   LIN     A2   T1                        V
+  14   50.0mm/s   LIN     A2   T1                        V
+  15    250mm/s   LIN     A1   T1  D1                    V
+                  'At Machine
+  16    100mm/s   LIN     A1   T1  D1                    V
+                  'At Machine
+  17    100mm/s   LIN     A1   T1     S1                 V
+  18    REM[""]                                      FN99;Comment
+  19    DELAY[0.5]                                   FN50;Timer delay
+  20    SETM[O134,0]                                 FN105;Output signal
+                  Signal Name :Blowoff
+  21    150mm/s   LIN     A1   T1     S1                 V
+  22    750mm/s   LIN     A8   T1                        V
+                  'At Machine
+  23    REM["----------------------------------"]    FN99;Comment
+  24    END                                          FN92;End
+Program List End

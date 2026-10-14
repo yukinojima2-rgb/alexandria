@@ -1,0 +1,54 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.231(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Left MC load OP10 Part1"]               FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3   25.0%      JOINT   A2   T1     S2                 V
+   4    REM["Flat"]                                  FN99;Comment
+   5    200mm/s   LIN     A1   T1     S1                 V
+   6    200mm/s   LIN     A1 P T1                        V
+   7   50.0mm/s   LIN     A1 P T1                        V
+   8    DELAY[0.2]                                   FN50;Timer delay
+   9    CALLP[30]                                    FN80;Program call
+                  Program Name:Gripper2 Open
+  10   10.0mm/s   LIN     A1 P T1                        V
+  11    DELAY[0.2]                                   FN50;Timer delay
+  12    CALLP[31]                                    FN80;Program call
+                  Program Name:Gripper 2 Close
+  13    DELAY[0.2]                                   FN50;Timer delay
+  14    100mm/s   LIN     A1   T1     S1                 V
+  15    REM["Flat"]                                  FN99;Comment
+  16    300mm/s   LIN     A1   T1     S2                 V
+  17    100mm/s   LIN     A1 P T1                        V
+                  'Approach
+  18   15.0mm/s   LIN     A1 P T1                        V
+  19   10.0mm/s   LIN     A1 P T1                        V
+  20    SETM[O1016,0]                                FN105;Output signal
+                  Signal Name :Pusher In
+  21    DELAY[0.25]                                  FN50;Timer delay
+  22    SETM[O1006,1]                                FN105;Output signal
+                  Signal Name :Pusher Out
+  23    DELAY[4]                                     FN50;Timer delay
+  24    SETMD[O1000,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :MC1 clamp OP10
+  25    WAITI[I1000]                                 FN525;Wait Input cond
+                  Signal Name :MC1 OP10 is clamped
+  26    SETM[O130,0]                                 FN105;Output signal
+                  Signal Name :Open G2
+  27    DELAY[0.25]                                  FN50;Timer delay
+  28    SETM[O131,0]                                 FN105;Output signal
+                  Signal Name :Close G2
+  29    DELAY[0.25]                                  FN50;Timer delay
+  30    SETM[O130,1]                                 FN105;Output signal
+                  Signal Name :Open G2
+  31    DELAY[1]                                     FN50;Timer delay
+  32    SETM[O1006,0]                                FN105;Output signal
+                  Signal Name :Pusher Out
+  33    DELAY[0.25]                                  FN50;Timer delay
+  34    SETM[O1016,1]                                FN105;Output signal
+                  Signal Name :Pusher In
+  35    250mm/s   LIN     A1 P T1  D3 S3                 V
+                  'CLEAR DROP
+  36    DELAY[0.25]                                  FN50;Timer delay
+  37    END                                          FN92;End
+Program List End

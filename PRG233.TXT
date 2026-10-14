@@ -1,0 +1,32 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.233(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Left MC Unload OP10 Part1"]             FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3    SETMD[O128,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Open G1
+   4   20.0%      JOINT   A6   T1                        V
+                  'Approach
+   5    150mm/s   LIN     A2   T2     S2                 V
+   6    REM["""""]                                   FN99;Comment
+   7   50.0mm/s   LIN     A2   T1     S1                 V
+   8    SETMD[O129,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Close G1
+   9    DELAY[1]                                     FN50;Timer delay
+  10    SETM[O1000,0]                                FN105;Output signal
+                  Signal Name :MC1 clamp OP10
+  11    SETMD[O1001,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :MC1 unclamp OP10
+  12    SETM[O1006,0]                                FN105;Output signal
+                  Signal Name :Pusher Out
+  13    SETM[O1016,1]                                FN105;Output signal
+                  Signal Name :Pusher In
+  14    WAITI[I1001]                                 FN525;Wait Input cond
+                  Signal Name :MC1 OP10 is unclamped
+  15    DELAY[1]                                     FN50;Timer delay
+  16    100mm/s   LIN     A1 P T1                        V
+                  'DROP
+  17    250mm/s   LIN     A1 P T1  D3 S3                 V
+                  'CLEAR DROP
+  18    END                                          FN92;End
+Program List End

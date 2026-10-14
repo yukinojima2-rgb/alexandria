@@ -1,0 +1,40 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.202(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Left MC Exit"]                          FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3    SETM[O1016,0]                                FN105;Output signal
+                  Signal Name :Pusher In
+   4    SETM[O1006,1]                                FN105;Output signal
+                  Signal Name :Pusher Out
+   5   25.0%      JOINT   A2   T1  D2 S2                 V
+                  'At Machine
+   6   25.0%      JOINT   A2   T1  D1                    V
+                  'At Machine
+   7   25.0%      JOINT   A2   T1  D1                    V
+                  'Enter machine
+   8    REM["------ Clamp Sequence -------"]         FN99;Comment
+   9    SETM[O1002,0]                                FN105;Output signal
+                  Signal Name :MC1 robot in MC
+  10    SETMD[O1013,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Door Closed
+  11    WAITI[I1081]                                 FN525;Wait Input cond
+                  Signal Name :Door Closed
+  12    SETMD[O1015,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Rotate +
+  13    DELAY[5]                                     FN50;Timer delay
+  14    GOTO[16]                                     FN90;Line jump
+  15    WAITI[I1008]                                 FN525;Wait Input cond
+                  Signal Name :Index in position 2
+  16    SETMD[O1001,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :MC1 unclamp OP10
+  17    DELAY[3]                                     FN50;Timer delay
+  18    SETMD[O1000,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :MC1 clamp OP10
+  19    DELAY[1]                                     FN50;Timer delay
+  20    SETM[O1006,1]                                FN105;Output signal
+                  Signal Name :Pusher Out
+  21    SETM[O1016,0]                                FN105;Output signal
+                  Signal Name :Pusher In
+  22    END                                          FN92;End
+Program List End

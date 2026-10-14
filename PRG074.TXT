@@ -1,0 +1,55 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.074(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Service MC1 Part3"]                     FN99;Comment
+   2    REM["Approach MC1"]                          FN99;Comment
+   3   25.0%      JOINT   A2   T1     S1                 V
+   4    REM["Wait MC1 Ready For Service"]            FN99;Comment
+   5    WAITI[I1002]                                 FN525;Wait Input cond
+                  Signal Name :MC1 ready for service
+   6    CALLP[201]                                   FN80;Program call
+                  Program Name:Left MC Enter
+   7    REM["Pallet 1 In Position"]                  FN99;Comment
+   8    IF I1005=1                                   FN676;IF Condition
+   9    CALLP[220]                                   FN80;Program call
+                  Program Name:Left MC Blowoff Fixture
+  10    CALLP[433]                                   FN80;Program call
+                  Program Name:Left MC Unload OP10 Part3
+  11    CALLP[220]                                   FN80;Program call
+                  Program Name:Left MC Blowoff Fixture
+  12    CALLP[431]                                   FN80;Program call
+                  Program Name:Left MC load OP10 Part3
+  13    CALLP[432]                                   FN80;Program call
+                  Program Name:Left MC Unload OP20 Part3
+  14    CALLP[220]                                   FN80;Program call
+                  Program Name:Left MC Blowoff Fixture
+  15    CALLP[430]                                   FN80;Program call
+                  Program Name:Left MC Load OP20 Part3
+  16    ELSEIF I1006=1                               FN677;ELSEIF Condition
+  17    CALLP[220]                                   FN80;Program call
+                  Program Name:Left MC Blowoff Fixture
+  18    CALLP[433]                                   FN80;Program call
+                  Program Name:Left MC Unload OP10 Part3
+  19    CALLP[220]                                   FN80;Program call
+                  Program Name:Left MC Blowoff Fixture
+  20    CALLP[431]                                   FN80;Program call
+                  Program Name:Left MC load OP10 Part3
+  21    CALLP[432]                                   FN80;Program call
+                  Program Name:Left MC Unload OP20 Part3
+  22    CALLP[220]                                   FN80;Program call
+                  Program Name:Left MC Blowoff Fixture
+  23    CALLP[430]                                   FN80;Program call
+                  Program Name:Left MC Load OP20 Part3
+  24    ENDIF                                        FN679;Condition end
+  25    REM["Exit MC1"]                              FN99;Comment
+  26    CALLP[202]                                   FN80;Program call
+                  Program Name:Left MC Exit
+  27    300mm/s   LIN     A2   T1     S1                 V
+  28    SETMD[O1003,1,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :MC1 service complete
+  29    CALLP[8888]                                  FN80;Program call
+                  Program Name:DEBURR
+  30    CALLP[165]                                   FN80;Program call
+                  Program Name:Regrip OP 20
+  31    END                                          FN92;End
+Program List End

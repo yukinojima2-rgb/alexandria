@@ -1,0 +1,45 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.071(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Service Drawers Close"]                 FN99;Comment
+   2    IF I0108=1 AND I0109=1 THEN 24 ELSE 3        FN602;Condition
+   3    SETM[O1020,1]                                FN105;Output signal
+                  Signal Name :Lock cabinet door
+   4    WAITI[I1065]                                 FN525;Wait Input cond
+                  Signal Name :Cabinet is locked
+   5    SETM[O1024,0]                                FN105;Output signal
+                  Signal Name :lock Drawers
+   6    SETM[O1025,1]                                FN105;Output signal
+                  Signal Name :UNLock Drawers
+   7    WAITI[I1030]                                 FN525;Wait Input cond
+                  Signal Name :Drawer lock is up
+   8    IF I1048=1 THEN 9 ELSE 11                    FN602;Condition
+   9    CALLP[60]                                    FN80;Program call
+                  Program Name:Close Cab 1 Drawer 1
+  10    GOTO[22]                                     FN90;Line jump
+  11    IF I1049=1 THEN 12 ELSE 14                   FN602;Condition
+  12    CALLP[61]                                    FN80;Program call
+                  Program Name:Close Cab 1 Drawer 2
+  13    GOTO[22]                                     FN90;Line jump
+  14    IF I1050=1 THEN 15 ELSE 17                   FN602;Condition
+  15    CALLP[62]                                    FN80;Program call
+                  Program Name:Close Cab 1 Drawer 3
+  16    GOTO[22]                                     FN90;Line jump
+  17    IF I1051=1 THEN 18 ELSE 20                   FN602;Condition
+  18    CALLP[63]                                    FN80;Program call
+                  Program Name:Close Cab 1 Drawer 4
+  19    GOTO[22]                                     FN90;Line jump
+  20    IF I1052=1 THEN 21 ELSE 22                   FN602;Condition
+  21    CALLP[64]                                    FN80;Program call
+                  Program Name:Close Cab 1 Drawer 5
+  22    SETM[O1020,0]                                FN105;Output signal
+                  Signal Name :Lock cabinet door
+  23    IF I0109=0 THEN 25 ELSE 24                   FN602;Condition
+  24    END                                          FN92;End
+  25    REM["Drawer Not Closed"]                     FN99;Comment
+  26    SETMD[O52,1,0,1]                             FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Alarm2
+  27    DELAY[0.5]                                   FN50;Timer delay
+  28    STOP                                         FN41;Robot stop
+  29    END                                          FN92;End
+Program List End

@@ -1,0 +1,32 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.019(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Service Cabinet 1 Place"]               FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3    REM["Check For Active Drawer"]               FN99;Comment
+   4    IF I0109=1 THEN 21 ELSE 6                    FN602;Condition
+   5    REM["---------------------------------"]     FN99;Comment
+   6    IF I0268=1 AND I1048=1 THEN 7 ELSE 9         FN602;Condition
+   7    CALLP[120]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 1
+   8    JMP[22]                                      FN20;Step jump
+   9    IF I0269=1 AND I1049=1 THEN 10 ELSE 12       FN602;Condition
+  10    CALLP[121]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 2
+  11    JMP[22]                                      FN20;Step jump
+  12    IF I0270=1 AND I1050=1 THEN 13 ELSE 15       FN602;Condition
+  13    CALLP[122]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 3
+  14    JMP[22]                                      FN20;Step jump
+  15    IF I0271=1 AND I1051=1 THEN 16 ELSE 18       FN602;Condition
+  16    CALLP[123]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 4
+  17    JMP[22]                                      FN20;Step jump
+  18    IF I0272=1 AND I1052=1 THEN 19 ELSE 20       FN602;Condition
+  19    CALLP[124]                                   FN80;Program call
+                  Program Name:Place Cab 1 Drawer 5
+  20    REM[""]                                      FN99;Comment
+  21    REM["----------------------------------"]    FN99;Comment
+  22    LETVI[V31%,V31%+1]                           FN75;Set integer variable
+  23    END                                          FN92;End
+Program List End

@@ -1,0 +1,27 @@
+1,MC1 part clamped OP10
+2,MC1 part unclamped OP10
+3,MC1 RDY for service
+4,MC1 part clamped OP20
+5,MC1 part unclamped OP20
+6,MC1 clamp OP10
+7,MC1 unclamp OP10
+8,MC1 robot in MC
+9,MC1 service complete
+10,Robot Fault
+11,MC1 clamp OP20
+12,MC1 unclamp OP20
+13,Pallet 1 in position
+14,Pallet 2 in position
+15,Index in position 1
+16,Index in position 2
+17,Gap Check
+18,Index Request
+19,Check Gap
+20,Open Door
+21,Close Door
+22,Rotate -
+23,Rotate +
+24,Pusher In
+25,Door Closed
+26,Door Open
+

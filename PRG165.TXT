@@ -1,0 +1,58 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.165(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Regrip OP 20"]                          FN99;Comment
+   2    SETMD[O1070,0,0,1]                           FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :SWIVEL P1
+   3    SETM[O1071,1]                                FN105;Output signal
+                  Signal Name :SWIVEL P2
+   4    IF I1018=1 THEN 32 ELSE 6                    FN602;Condition
+   5    REM["----------------------------------"]    FN99;Comment
+   6    500mm/s   LIN     A6   T1     S2                 V
+                  'At infeed conveyor
+   7    300mm/s   LIN     A3   T1     S3                 V
+   8    200mm/s   LIN     A1   T1     S1                 V
+   9    DELAY[0.5]                                   FN50;Timer delay
+  10    SETM[O130,0]                                 FN105;Output signal
+                  Signal Name :Open G2
+  11    DELAY[0.5]                                   FN50;Timer delay
+  12    SETM[O131,0]                                 FN105;Output signal
+                  Signal Name :Close G2
+  13    DELAY[0.5]                                   FN50;Timer delay
+  14    SETM[O130,1]                                 FN105;Output signal
+                  Signal Name :Open G2
+  15    DELAY[0.5]                                   FN50;Timer delay
+  16    150mm/s   LIN     A1   T1     S1                 V
+  17    IF I1018=0 THEN 18 ELSE 21                   FN602;Condition
+  18    LETVI[V392%,1]                               FN75;Set integer variable
+  19    250mm/s   LIN     A6   T1     S2                 V
+                  'At infeed conveyor
+  20    END                                          FN92;End
+  21    DELAY[0.25]                                  FN50;Timer delay
+  22    REM["Final Pick"]                            FN99;Comment
+  23    100mm/s   LIN     A1 P T1     S1                 V
+  24    SETMD[O131,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Close G2
+  25    DELAY[0.5]                                   FN50;Timer delay
+  26    REM[""]                                      FN99;Comment
+  27    250mm/s   LIN     A1   T1  D3 S3                 V
+                  'Approach conveyor
+  28    250mm/s   LIN     A5   T1                        V
+  29    JMP[38]                                      FN20;Step jump
+  30    CALLP[8888]                                  FN80;Program call
+                  Program Name:DEBURR
+  31    IF I1048=1 THEN 38 ELSE 33                   FN602;Condition
+  32    REM["---------"]                             FN99;Comment
+  33    500mm/s   LIN     A1   T1     S1                 V
+  34   50.0mm/s   LIN     A1 P T1     S1                 V
+  35    500mm/s   LIN     A1   T1     S1                 V
+  36    300mm/s   LIN     A1   T1     S1                 V
+  37    REM["----------------------------------"]    FN99;Comment
+  38    300mm/s   LIN     A1   T1     S1                 V
+  39    JMP[43]                                      FN20;Step jump
+  40    SETMD[O52,1,0,1]                             FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Alarm2
+  41    STOP                                         FN41;Robot stop
+  42    END                                          FN92;End
+  43    END                                          FN92;End
+Program List End

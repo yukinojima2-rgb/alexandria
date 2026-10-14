@@ -1,0 +1,22 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.009(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Main 2"]                                FN99;Comment
+   2    REM["---------------------------------"]     FN99;Comment
+   3    REM["Check Air"]                             FN99;Comment
+   4    IF O0031=1 THEN 8 ELSE 5                     FN602;Condition
+   5    SETMD[O52,1,0,1]                             FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Alarm2
+   6    STOP                                         FN41;Robot stop
+   7    END                                          FN92;End
+   8    WAITJ[I108]                                  FN526;Wait not Input cond
+                  Signal Name :No drawers in process
+   9    WAITI[I1017]                                 FN525;Wait Input cond
+                  Signal Name :Air pressure OK
+  10    REM["---------------------------------"]     FN99;Comment
+  11    CALLP[75]                                    FN80;Program call
+                  Program Name:Service Active Drawer
+  12    REM["----------------------------------"]    FN99;Comment
+  13    GOTO[1]                                      FN90;Line jump
+  14    END                                          FN92;End
+Program List End

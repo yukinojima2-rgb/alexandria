@@ -1,0 +1,102 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.002(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Initilize data"]                        FN99;Comment
+   2    REM["Resets Pallets and outputs"]            FN99;Comment
+   3    PALLET3_RESET[1]                             FN251;Palletize reset
+   4    PALLET3_RESET[2]                             FN251;Palletize reset
+   5    PALLET3_RESET[3]                             FN251;Palletize reset
+   6    PALLET3_RESET[4]                             FN251;Palletize reset
+   7    PALLET3_RESET[5]                             FN251;Palletize reset
+   8    PALLET3_RESET[6]                             FN251;Palletize reset
+   9    PALLET3_RESET[7]                             FN251;Palletize reset
+  10    PALLET3_RESET[8]                             FN251;Palletize reset
+  11    PALLET3_RESET[9]                             FN251;Palletize reset
+  12    PALLET3_RESET[10]                            FN251;Palletize reset
+  13    PALLET3_RESET[11]                            FN251;Palletize reset
+  14    PALLET3_RESET[12]                            FN251;Palletize reset
+  15    PALLET3_RESET[13]                            FN251;Palletize reset
+  16    PALLET3_RESET[14]                            FN251;Palletize reset
+  17    PALLET3_RESET[15]                            FN251;Palletize reset
+  18    PALLET3_RESET[16]                            FN251;Palletize reset
+  19    PALLET3_RESET[17]                            FN251;Palletize reset
+  20    PALLET3_RESET[18]                            FN251;Palletize reset
+  21    PALLET3_RESET[19]                            FN251;Palletize reset
+  22    PALLET3_RESET[20]                            FN251;Palletize reset
+  23    SETM[O1017,0]                                FN105;Output signal
+  24    SETM[O1018,0]                                FN105;Output signal
+  25    SETM[O100,0]                                 FN105;Output signal
+                  Signal Name :Drawer Pick Done
+  26    SETMD[o268,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Flash Push Button(Release)
+  27    SETMD[o269,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Flash Push Button(Release)
+  28    SETMD[o270,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Flash Push Button(Release)
+  29    SETMD[o271,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Flash Push Button(Release)
+  30    SETMD[o272,1,0,1]                            FN35;Output sig(ON/OFF/delay/pulse)
+                  Signal Name :Flash Push Button(Release)
+  31    SETM[O1008,0]                                FN105;Output signal
+                  Signal Name :Spare
+  32    SETM[O1009,0]                                FN105;Output signal
+                  Signal Name :Spare
+  33    SETM[O1010,0]                                FN105;Output signal
+                  Signal Name :MC1 clamp OP20
+  34    SETM[O1011,0]                                FN105;Output signal
+                  Signal Name :MC1 unclamp OP20
+  35    SETM[O1012,0]                                FN105;Output signal
+                  Signal Name :Door Open
+  36    SETM[O1013,0]                                FN105;Output signal
+                  Signal Name :Door Closed
+  37    SETM[O1014,0]                                FN105;Output signal
+                  Signal Name :Rotate -
+  38    SETM[O1015,0]                                FN105;Output signal
+                  Signal Name :Rotate +
+  39    SETM[O1016,1]                                FN105;Output signal
+                  Signal Name :Pusher In
+  40    SETM[O1019,0]                                FN105;Output signal
+  41    SETM[O1030,0]                                FN105;Output signal
+  42    SETM[O1031,0]                                FN105;Output signal
+  43    SETM[O1032,0]                                FN105;Output signal
+  44    SETM[O1033,0]                                FN105;Output signal
+  45    SETM[O1034,0]                                FN105;Output signal
+  46    SETM[O1035,0]                                FN105;Output signal
+  47    SETM[O1036,0]                                FN105;Output signal
+  48    SETM[O1055,0]                                FN105;Output signal
+  49    SETM[O1063,0]                                FN105;Output signal
+  50    SETM[O1071,0]                                FN105;Output signal
+                  Signal Name :SWIVEL P2
+  51    SETM[O1079,0]                                FN105;Output signal
+  52    SETM[O1112,0]                                FN105;Output signal
+  53    SETM[O1113,0]                                FN105;Output signal
+  54    SETM[O1114,0]                                FN105;Output signal
+  55    SETM[O1115,0]                                FN105;Output signal
+  56    SETM[O1116,0]                                FN105;Output signal
+  57    SETM[O1117,0]                                FN105;Output signal
+  58    SETM[O1118,0]                                FN105;Output signal
+  59    SETM[O1119,0]                                FN105;Output signal
+  60    SETM[O1120,0]                                FN105;Output signal
+  61    SETM[O1121,0]                                FN105;Output signal
+  62    SETM[O1122,0]                                FN105;Output signal
+  63    SETM[O1123,0]                                FN105;Output signal
+  64    SETM[O1144,0]                                FN105;Output signal
+  65    SETM[O1145,0]                                FN105;Output signal
+  66    SETM[O1146,0]                                FN105;Output signal
+  67    SETM[O1147,0]                                FN105;Output signal
+  68    SETM[O1148,0]                                FN105;Output signal
+  69    SETM[O1149,0]                                FN105;Output signal
+  70    SETM[O1150,0]                                FN105;Output signal
+  71    SETM[O1151,0]                                FN105;Output signal
+  72    SETM[O1152,0]                                FN105;Output signal
+  73    SETM[O1153,0]                                FN105;Output signal
+  74    SETM[O1154,0]                                FN105;Output signal
+  75    SETM[O1155,0]                                FN105;Output signal
+  76    SETM[O1067,0]                                FN105;Output signal
+  77    LETVI[V360%,0]                               FN75;Set integer variable
+  78    LETVI[V361%,0]                               FN75;Set integer variable
+  79    LETVI[V311%,0]                               FN75;Set integer variable
+  80    LETVI[V310%,0]                               FN75;Set integer variable
+  81    LETVI[V392%,0]                               FN75;Set integer variable
+  82    END                                          FN92;End
+Program List End

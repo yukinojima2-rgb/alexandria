@@ -1,0 +1,39 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.103(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Pick Cab 1 Drawer 4"]                   FN99;Comment
+   2   25.0%      JOINT   A6   T1                        V
+                  'AT front of drawer
+   3    750mm/s   LIN     A1   T1                        V
+                  'Center of drawer
+   4    CALLP[30]                                    FN80;Program call
+                  Program Name:Gripper2 Open
+   5    PALLET3[4,0,O0,O0]                           FN249;Palletize start
+   6    500mm/s   LIN     A3   T1     S1                 V
+                  'Above
+   7    100mm/s   LIN     A1   T1     S1                 V
+                  'Approach pick
+   8    100mm/s   LIN     A1 P T1     S1                 V
+                  'Pick
+   9    DELAY[0.25]                                  FN50;Timer delay
+  10    CALLP[31]                                    FN80;Program call
+                  Program Name:Gripper 2 Close
+  11    DELAY[0.25]                                  FN50;Timer delay
+  12    CALLP[30]                                    FN80;Program call
+                  Program Name:Gripper2 Open
+  13    DELAY[0.25]                                  FN50;Timer delay
+  14    CALLP[31]                                    FN80;Program call
+                  Program Name:Gripper 2 Close
+  15    DELAY[0.25]                                  FN50;Timer delay
+  16    250mm/s   LIN     A2   T1     S1                 V
+                  'Clear
+  17    PALLET3_END[4,O100]                          FN250;Palletize end
+                  Signal Name :Drawer Pick Done
+  18    500mm/s   LIN     A2   T1  D3 S3                 V
+                  'Center of drawer
+  19    IF O0100=1 THEN 21 ELSE 20                   FN602;Condition
+  20    IF I0003=0 THEN 3 ELSE 21                    FN602;Condition
+  21    750mm/s   LIN     A4   T1  D3 S3                 V
+                  'Clear
+  22    END                                          FN92;End
+Program List End

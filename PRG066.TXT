@@ -1,0 +1,46 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.066(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Open Cab 1 Drawer 2"]                   FN99;Comment
+   2    SETM[O1020,1]                                FN105;Output signal
+                  Signal Name :Lock cabinet door
+   3    REM["----------------------------------"]    FN99;Comment
+   4   25.0%      JOINT   A1   T1                        V
+                  'At infeed conveyor
+   5    500mm/s   LIN     A1 P T1                        V
+   6   20.0%      JOINT   A1 P T1                        V
+                  'At infeed conveyor
+   7    REM["-------------------------------------"] FN99;Comment
+   8    REM[""]                                      FN99;Comment
+   9    DELAY[0.5]                                   FN50;Timer delay
+  10    REM["Unlock Cab 1"]                          FN99;Comment
+  11    WAITI[I1057]                                 FN525;Wait Input cond
+                  Signal Name :D2 is closed
+  12    REM[""]                                      FN99;Comment
+  13    SETM[O1024,0]                                FN105;Output signal
+                  Signal Name :lock Drawers
+  14    SETM[O1025,1]                                FN105;Output signal
+                  Signal Name :UNLock Drawers
+  15    WAITI[I1030]                                 FN525;Wait Input cond
+                  Signal Name :Drawer lock is up
+  16    REM["Lock Cab 1"]                            FN99;Comment
+  17    300mm/s   LIN     A2   T1                        V
+                  'Approach conveyor
+  18    DELAY[0.5]                                   FN50;Timer delay
+  19   30.0mm/s   LIN     A1   T1                        V
+                  'Approach conveyor
+  20    SETM[O1025,0]                                FN105;Output signal
+                  Signal Name :UNLock Drawers
+  21    SETM[O1024,1]                                FN105;Output signal
+                  Signal Name :lock Drawers
+  22    WAITI[I1031]                                 FN525;Wait Input cond
+                  Signal Name :Drawer lock is down
+  23    DELAY[0.5]                                   FN50;Timer delay
+  24    REM["----------------------------------"]    FN99;Comment
+  25    500mm/s   LIN     A1   T1                        V
+                  'Approach conveyor
+  26    500mm/s   LIN     A1   T1                        V
+  27    SETM[O1020,0]                                FN105;Output signal
+                  Signal Name :Lock cabinet door
+  28    END                                          FN92;End
+Program List End

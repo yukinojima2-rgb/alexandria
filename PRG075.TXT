@@ -1,0 +1,47 @@
+Program List                            10/14/26(Month/Day/Year)
+UNIT1(Unit Name)                        MZ25-01.075(Program Name)
+MZ25-01(Mechanism Name)
+   1    REM["Service Active Drawer"]                 FN99;Comment
+   2    REM["No Drawer In Process"]                  FN99;Comment
+   3    IF I0108=1 THEN 34 ELSE 4                    FN602;Condition
+   4    REM["Open Drawer If Needed"]                 FN99;Comment
+   5    IF I0109=1                                   FN676;IF Condition
+   6    CALLP[70]                                    FN80;Program call
+                  Program Name:Service Drawers Open
+   7    ENDIF                                        FN679;Condition end
+   8    REM["Pick Active Drawer"]                    FN99;Comment
+   9    SETM[O100,0]                                 FN105;Output signal
+                  Signal Name :Drawer Pick Done
+  10    CALLP[18]                                    FN80;Program call
+                  Program Name:Service Cabinet 1 Pick
+  11    REM["Pick Pallet Complete With No Part"]     FN99;Comment
+  12    IF O0100=1 AND I0003=0 THEN 13 ELSE 15       FN602;Condition
+  13    CALLP[71]                                    FN80;Program call
+                  Program Name:Service Drawers Close
+  14    GOTO[2]                                      FN90;Line jump
+  15    REM["Regrip OP10"]                           FN99;Comment
+  16    CALLP[164]                                   FN80;Program call
+                  Program Name:Regrip OP 10
+  17    REM["Regrip Failed"]                         FN99;Comment
+  18    IF V392%=1 THEN 19 ELSE 21                   FN602;Condition
+  19    LETVI[V392%,0]                               FN75;Set integer variable
+  20    GOTO[8]                                      FN90;Line jump
+  21    REM["Service MC1 Part Select"]               FN99;Comment
+  22    REM["---------------------------------"]     FN99;Comment
+  23    IF V301%=1 THEN 24 ELSE 25                   FN602;Condition
+  24    CALLP[72]                                    FN80;Program call
+                  Program Name:Service MC1 Part1
+  25    IF V301%=2 THEN 26 ELSE 27                   FN602;Condition
+  26    CALLP[73]                                    FN80;Program call
+                  Program Name:Service MC1 Part2
+  27    IF V301%=3 THEN 28 ELSE 29                   FN602;Condition
+  28    CALLP[74]                                    FN80;Program call
+                  Program Name:Service MC1 Part3
+  29    REM["----------------------------------"]    FN99;Comment
+  30    REM["Place And Complete Active Drawer"]      FN99;Comment
+  31    CALLP[76]                                    FN80;Program call
+                  Program Name:Service Drawers Place Complete
+  32    REM["Continue If Another Drawer In Process"] FN99;Comment
+  33    IF I0108=0 THEN 2 ELSE 34                    FN602;Condition
+  34    END                                          FN92;End
+Program List End
